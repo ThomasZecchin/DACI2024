@@ -58,14 +58,14 @@ value="
  .control
   dc VGS -1.8 0 0.01
   setplot dc7
-  plot @M.XM4.msky130_fd_pr__pfet_01v8[id] ylabel Id xlabel Vgs title 'Id vs Vgs'
+  plot -@M.XM4.msky130_fd_pr__pfet_01v8[id] ylabel Id xlabel Vgs title 'Id vs Vgs'
   set filetype = ascii
   write tp1_1_dc7.raw
 
   reset
   dc VDS  -1.8 0 0.01 VGS -1.8 0 0.3
   setplot dc6
-  plot @M.XM4.msky130_fd_pr__pfet_01v8[id] ylabel Id xlabel Vds title 'Id vs Vds vs Vgs'
+  plot -@M.XM4.msky130_fd_pr__pfet_01v8[id] ylabel Id xlabel Vds title 'Id vs Vds vs Vgs'
   set filetype = ascii
   write tp1_2_dc6.raw
 
