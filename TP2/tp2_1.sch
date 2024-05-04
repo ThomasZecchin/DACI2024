@@ -59,27 +59,27 @@ value="
 
 * Simulation
 .control
-  *let wi = 1.5
-  *let wf = 4.5
-  *let wstep = 0.15
+  let wi = 1.5
+  let wf = 4.5
+  let wstep = 0.15
   
-  *dowhile wi <= wf
-    *print @M.XM1.msky130_fd_pr__nfet_01v8[w]
-    *alter @M.XM1.msky130_fd_pr__nfet_01v8[w] = wi
-    *alter @M.XM2.msky130_fd_pr__nfet_01v8[w] = wi
-    *let wi = wi + wstep
-    *op
-    *print @M.XM1.msky130_fd_pr__nfet_01v8[w]
-    *print @M.XM1.msky130_fd_pr__nfet_01v8[id]
-    *print @M.XM1.msky130_fd_pr__nfet_01v8[vds]
-    *print @M.XM1.msky130_fd_pr__nfet_01v8[vgs]
-    *print @M.XM2.msky130_fd_pr__nfet_01v8[w]
-    *print @M.XM2.msky130_fd_pr__nfet_01v8[id]
-    *print @M.XM2.msky130_fd_pr__nfet_01v8[vds]
-    *print @M.XM2.msky130_fd_pr__nfet_01v8[vgs]
-    *save all
-  *end
-  *write tp2_1.raw
+  dowhile wi <= wf
+    print @M.XM1.msky130_fd_pr__nfet_01v8[w]
+    alter @M.XM1.msky130_fd_pr__nfet_01v8[w] = wi
+    alter @M.XM2.msky130_fd_pr__nfet_01v8[w] = wi
+    let wi = wi + wstep
+    op
+    print @M.XM1.msky130_fd_pr__nfet_01v8[w]
+    print @M.XM1.msky130_fd_pr__nfet_01v8[id]
+    print @M.XM1.msky130_fd_pr__nfet_01v8[vds]
+    print @M.XM1.msky130_fd_pr__nfet_01v8[vgs]
+    print @M.XM2.msky130_fd_pr__nfet_01v8[w]
+    print @M.XM2.msky130_fd_pr__nfet_01v8[id]
+    print @M.XM2.msky130_fd_pr__nfet_01v8[vds]
+    print @M.XM2.msky130_fd_pr__nfet_01v8[vgs]
+    save all
+  end
+  write tp2_1.raw
 
 
   unset filetype
