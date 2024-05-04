@@ -89,7 +89,7 @@ value="
 .param ld = 0.9
 .param W0246 = 5
 .param wc = 70
-.param wd = 5
+.param wd = 20
 .options TEMPS = 27.0
 
 * Models
@@ -251,8 +251,8 @@ C {isource.sym} 370 20 0 0 {name=IREF1 value=DC\{iref\}}
 C {lab_wire.sym} 620 120 2 0 {name=l9 sig_type=std_logic lab=vbias_n}
 C {lab_wire.sym} 370 -70 0 1 {name=l10 sig_type=std_logic lab=vdd}
 C {sky130_fd_pr/nfet_01v8.sym} 390 110 0 1 {name=M1
-L=\{ld\}
-W=\{wd\}
+L=\{lc\}
+W=\{wc\}
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -265,8 +265,8 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 390 230 0 1 {name=M0
-L=\{lc\}
-W=\{wc\}
+L=\{ld\}
+W=\{wd\}
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
