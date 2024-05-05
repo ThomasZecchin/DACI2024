@@ -71,8 +71,8 @@ value="
 .param v2 = 0.9
 .param v3 = 1.2
 .param iref = 200u
-.param w = 10
-.param l = 0.5
+.param w = 4.2
+.param l = 0.15
 
 * Models
 .lib ~/skywater/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/sky130.lib TT
@@ -110,37 +110,38 @@ value="
 
 * Simulation
 .control
-  let wi = 4.5
-  let wf = 20
-  let wstep = 0.7
+ * let wi = 4.2
+  *let wf = 20
+   *let wstep = 0.7
   
-  dowhile wi <= wf
-    print @M.XM1.msky130_fd_pr__nfet_01v8[w]
-    alter @M.XM1.msky130_fd_pr__nfet_01v8[w] = wi
-    alter @M.XM2.msky130_fd_pr__nfet_01v8[w] = wi
-    alter @M.XM3.msky130_fd_pr__nfet_01v8[w] = wi
-    alter @M.XM4.msky130_fd_pr__nfet_01v8[w] = wi
-    let wi = wi + wstep
-    *op
-    print @M.XM1.msky130_fd_pr__nfet_01v8[w]
-    print @M.XM1.msky130_fd_pr__nfet_01v8[id]
-    print @M.XM1.msky130_fd_pr__nfet_01v8[vds]
-    print @M.XM1.msky130_fd_pr__nfet_01v8[vgs]
-    print @M.XM2.msky130_fd_pr__nfet_01v8[w]
-    print @M.XM2.msky130_fd_pr__nfet_01v8[id]
-    print @M.XM2.msky130_fd_pr__nfet_01v8[vds]
-    print @M.XM2.msky130_fd_pr__nfet_01v8[vgs]
-    print @M.XM3.msky130_fd_pr__nfet_01v8[w]
-    print @M.XM3.msky130_fd_pr__nfet_01v8[id]
-    print @M.XM3.msky130_fd_pr__nfet_01v8[vds]
-    print @M.XM3.msky130_fd_pr__nfet_01v8[vgs]
-    print @M.XM4.msky130_fd_pr__nfet_01v8[w]
-    print @M.XM4.msky130_fd_pr__nfet_01v8[id]
-    print @M.XM4.msky130_fd_pr__nfet_01v8[vds]
-    print @M.XM4.msky130_fd_pr__nfet_01v8[vgs]
-    save all
-  end
-  write tp2_2.raw
+*  dowhile wi <= wf
+ *   print @M.XM1.msky130_fd_pr__nfet_01v8[w]
+  *  alter @M.XM1.msky130_fd_pr__nfet_01v8[w] = wi
+  *  alter @M.XM2.msky130_fd_pr__nfet_01v8[w] = wi
+  *  alter @M.XM3.msky130_fd_pr__nfet_01v8[w] = wi
+  *  alter @M.XM4.msky130_fd_pr__nfet_01v8[w] = wi
+  *  let wi = wi + wstep
+  *  op
+  *  print @M.XM1.msky130_fd_pr__nfet_01v8[w]
+  *  print @M.XM1.msky130_fd_pr__nfet_01v8[l]
+  *  print @M.XM1.msky130_fd_pr__nfet_01v8[id]
+  *  print @M.XM1.msky130_fd_pr__nfet_01v8[vds]
+  *  print @M.XM1.msky130_fd_pr__nfet_01v8[vgs]
+  *  print @M.XM2.msky130_fd_pr__nfet_01v8[w]
+  *  print @M.XM2.msky130_fd_pr__nfet_01v8[id]
+  *  print @M.XM2.msky130_fd_pr__nfet_01v8[vds]
+  *  print @M.XM2.msky130_fd_pr__nfet_01v8[vgs]
+  *  print @M.XM3.msky130_fd_pr__nfet_01v8[w]
+  *  print @M.XM3.msky130_fd_pr__nfet_01v8[id]
+  *  print @M.XM3.msky130_fd_pr__nfet_01v8[vds]
+  *  print @M.XM3.msky130_fd_pr__nfet_01v8[vgs]
+  *  print @M.XM4.msky130_fd_pr__nfet_01v8[w]
+  *  print @M.XM4.msky130_fd_pr__nfet_01v8[id]
+  *  print @M.XM4.msky130_fd_pr__nfet_01v8[vds]
+  *  print @M.XM4.msky130_fd_pr__nfet_01v8[vgs]
+   * save all
+  *end
+  *write tp2_2.raw
 
 
   unset filetype
